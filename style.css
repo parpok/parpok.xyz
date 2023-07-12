@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.avatar>img{
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid grey;
+    padding: 1px;
+    margin: 0 auto;
+    height: 50%;
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+}
+
+#me{
+    text-align: center;
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+}
