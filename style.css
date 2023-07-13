@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body{
-    background-color: #025189;
+    width: 100%;
+    height: 100%;
+    background-color: #5ea4de;
     color: white;
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -19,35 +19,44 @@ p1{
     font-size: 1.75em;
 }
 
-#me{
-    text-align: center;
-    border: 1.75px dashed grey;
-    border-radius: 10%;
-}
-
-.avatar>img{
-    background-color: white;
-    border-radius: 50%;
-    border: 2.5px solid #5c0e0e;
-    padding: 1px;
-    margin: 0 auto;
-    height: 50%;
-    width: 50%;
-}
-
-/*.links{
+#me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    width: 10%;
-    height: 10%;
-}*/
+    text-align: center;
+    border-style: dotted;
+    border-radius: 25px;
+    border-color: #5c0e0e;
+  }
+  
+  .avatar > img {
+    max-width: 50%;
+    max-height: 50%;
+    border-style: dotted;
+    border-radius: 50%;
+    margin: 1em;
+  }
+
 
 footer{
+    height: 25px;
+    width: 100%;
+    text-align: center;
     background-color: #5c0e0e;
+    color: white;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding-top: 15px;
 }
+
+a:link {
+    color: white;
+  }
+  
+  a:visited {
+    color: white;
+  }
+  
+  a:hover {
+    color: #4d5b83;
+  }
