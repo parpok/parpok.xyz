@@ -2,13 +2,14 @@
 
 body{
     width: 100%;
-    height: 100%;
-    background-color: #5ea4de;
+    height: 200wh;
+    background-color: #141519;
     color: white;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 h1{
@@ -27,7 +28,9 @@ p1{
     text-align: center;
     border-style: dotted;
     border-radius: 25px;
+    background-color: #005093;
     border-color: #5c0e0e;
+    margin: 20% 0 0 0;
   }
   
   .avatar > img {
@@ -38,6 +41,14 @@ p1{
     margin: 1em;
   }
 
+  .links {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+  }
 
 footer{
     height: 25px;
