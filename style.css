@@ -8,7 +8,7 @@ body{
   align-items: center;
   flex-direction: column;
   overflow-x: hidden;
-
+  margin: 0;
 }
 
 
@@ -60,7 +60,7 @@ p1{
     text-align: center;
     border-style: dotted;
     border-radius: 25px;
-
+    padding-bottom: 25px;
     margin: 10% 0 0 0;
   }
   
@@ -86,7 +86,7 @@ footer{
     width: 100%;
     text-align: center;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
