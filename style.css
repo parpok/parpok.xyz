@@ -1,14 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body{
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+
+}
+
+
+@media (prefers-color-scheme: light)
+{
+  body{
+      background-color: #5ea4de;
+      color: white;
+  }
+
+  #me{
     background-color: #5ea4de;
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    border-color: #cdb58f;
+  }
+  footer{
+    background-color: #cdb58f;
+  }
+}
+
+
+@media (prefers-color-scheme: dark)
+{
+  body{
+      background-color: #141519;
+      color: white;
+  }
+  #me{
+    background-color: #005093;
+    border-color: #5c0e0e;
+  }
+  footer{
+    background-color: #5c0e0e;
+  }
 }
 
 h1{
@@ -27,7 +60,8 @@ p1{
     text-align: center;
     border-style: dotted;
     border-radius: 25px;
-    border-color: #5c0e0e;
+
+    margin: 10% 0 0 0;
   }
   
   .avatar > img {
@@ -38,12 +72,19 @@ p1{
     margin: 1em;
   }
 
+  .links {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+  }
 
 footer{
     height: 25px;
     width: 100%;
     text-align: center;
-    background-color: #5c0e0e;
     color: white;
     position: absolute;
     bottom: 0;
@@ -51,12 +92,15 @@ footer{
 
 a:link {
     color: white;
+    text-decoration: none;
   }
   
   a:visited {
     color: white;
+    text-decoration: none;
   }
   
   a:hover {
     color: #4d5b83;
+    text-decoration: none;
   }
