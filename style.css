@@ -15,16 +15,16 @@ body{
 @media (prefers-color-scheme: light)
 {
   body{
-      background-color: #B3BFFF;
+      background-color: #5ea4de;
       color: white;
   }
 
   #me{
-    background-color: #7586DF;
-    border-color: #6AC55D;
+    background-color: #5ea4de;
+    border-color: #cdb58f;
   }
   footer{
-    background-color: #6AC55D;
+    background-color: #cdb58f;
   }
 }
 
@@ -32,15 +32,15 @@ body{
 @media (prefers-color-scheme: dark)
 {
   body{
-      background-color: #4D3E3A;
+      background-color: #141519;
       color: white;
   }
   #me{
-    background-color: #8E75DF;
-    border-color: #DCAF86;
+    background-color: #005093;
+    border-color: #5c0e0e;
   }
   footer{
-    background-color: #A86448;
+    background-color: #5c0e0e;
   }
 }
 
