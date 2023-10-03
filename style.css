@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import "@catppuccin/palette/style";
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
 
 body{
   width: 100%;
@@ -15,32 +18,62 @@ body{
 @media (prefers-color-scheme: light)
 {
   body{
-      background-color: #B3BFFF;
-      color: white;
+      background-color: var(--ctp-latte-base);
+      color: var(--ctp-latte-text);
   }
 
   #me{
-    background-color: #7586DF;
-    border-color: #6AC55D;
+    background-color: var(--ctp-latte-sky);
+    border-color: var(--ctp-latte-green);
   }
   footer{
-    background-color: #6AC55D;
+    background-color: var(--ctp-latte-green);
   }
+
+    a:link {
+      color: var(--ctp-latte-subtext1);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: (--ctp-latte-subtext1);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--ctp-mocha-subtext1);
+      text-decoration: none;
+    }
 }
 
 
 @media (prefers-color-scheme: dark)
 {
   body{
-      background-color: #4D3E3A;
-      color: white;
+      background-color: var(--ctp-mocha-base);
+      color: var(--ctp-mocha-text);
   }
   #me{
-    background-color: #8E75DF;
-    border-color: #DCAF86;
+    background-color: var(--ctp-mocha-mauve);
+    border-color: var(--ctp-mocha-peach);
   }
   footer{
-    background-color: #A86448;
+    background-color: var(--ctp-mocha-crust);
+  }
+
+  a:link {
+    color: var(--ctp-mocha-subtext1);
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: var(--ctp-mocha-subtext1);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--ctp-latte-subtext1);
+    text-decoration: none;
   }
 }
 
@@ -89,19 +122,4 @@ footer{
     position: fixed;
     bottom: 0;
 }
-
-a:link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #4d5b83;
-    text-decoration: none;
-  }
   /* jeez stuff ain't working like I wanted  */
