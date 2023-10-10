@@ -2,6 +2,7 @@
 @import "@catppuccin/palette/style";
 @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
 
+/* Czy to jest już poprawne z standardem szkoły  */
 
 body{
   width: 100%;
@@ -22,7 +23,7 @@ body{
       color: var(--ctp-latte-text);
   }
 
-  #me{
+  .me{
     background-color: var(--ctp-latte-sky);
     border-color: var(--ctp-latte-green);
   }
@@ -53,11 +54,12 @@ body{
       background-color: var(--ctp-mocha-base);
       color: var(--ctp-mocha-text);
   }
-  #me{
+  .me{
     background-color: var(--ctp-mocha-mauve);
     border-color: var(--ctp-mocha-peach);
   }
-  footer{
+
+footer{
     background-color: var(--ctp-mocha-crust);
   }
 
@@ -85,7 +87,7 @@ p1{
     font-size: 1.75em;
 }
 
-#me {
+.me {
     display: flex;
     flex-direction: column;
     justify-content: center;
