@@ -20,6 +20,9 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="/content/avatar.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
 </head>
 <body>
 <!-- Niezły zbadaj element -->
@@ -47,11 +50,66 @@
             </div>
 
 
-    <footer>
+    <footer class="bottom_stuff">
 
-        <p2>2023 &copy; <a href="https://github.com/parpok">Parpok</a></p2>
+        <p2 id="date"></p2>
+            <a href="https://github.com/parpok/parpok.github.io">Site src</a>
 
     </footer>
+    <script>
+        var d = new Date();
+        var n = d.getFullYear();
+        document.getElementById("date").innerHTML = n;
+        </script>
+        <style>
+            
+    body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+    }
+
+    .me {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-style: dotted;
+        border-radius: 25px;
+        padding-bottom: 25px;
+        margin: 5% 0 0 0;
+    }
+    
+        .avatar > img {
+            max-width: 50%;
+            max-height: 50%;
+            border-style: dotted;
+            border-radius: 50%;
+            margin: 1em;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-direction: row;
+        }
+
+    footer{
+        height: 25px;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+    }
+        </style>
     <!-- JENOTY -->
 </body>
 </html>
