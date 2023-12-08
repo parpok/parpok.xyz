@@ -25,91 +25,91 @@
 
 </head>
 <body>
-<!-- Niezły zbadaj element -->
-            <div class="me">
-                <div class="avatar">
-                    
-                    <img src="/content/avatar.png" alt="my avatar">
-                
-                </div>
 
-                    <div id="info">
-                    <h1>Parpok</h1>
-                    <p1>Wannabe dev and sysadmin</p1>
-                    </div>
+<div class="kurwa">
 
-                    <div class="links">
+<center>
 
-                            <a href="mailto:me@parpok.xyz"><p1>📧</p1></a>
-                            <a rel="me" href="https://101010.pl/@parpok"><p1>🦣</p1></a>
-                            <a href="https://github.com/parpok"><p1>🧑🏽‍💻</p1></a>
-                            <a href="https://discordapp.com/users/331154420559511552"><p1>💬</p1></a>
-
-                        </div>
-
-            </div>
-
-
-    <footer class="bottom_stuff">
-
-        <p2 id="date"></p2>
-            <a href="https://github.com/parpok/parpok.github.io">Site src</a>
-
-    </footer>
-    <script>
-        var d = new Date();
-        var n = d.getFullYear();
-        document.getElementById("date").innerHTML = n;
-        </script>
-        <style>
-            
-    body{
-    width: 100%;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden;
-    margin: 0;
-    }
-
-    .me {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-style: dotted;
-        border-radius: 25px;
-        padding-bottom: 25px;
-        margin: 5% 0 0 0;
-    }
     
-        .avatar > img {
-            max-width: 50%;
-            max-height: 50%;
-            border-style: dotted;
-            border-radius: 50%;
-            margin: 1em;
-        }
+    <div class="skurwiel">
+        
+        <img src="./content/avatar.png" alt="avatar" height="200px" width="200px" id="avatar">
 
-        .links {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
-            flex-direction: row;
-        }
+        <h1 id="nickname">Parpok</h1>
+        
+    </div>
+    
+    <div class="chuje">
+        
+        <div class="chuj"> <a href="https://github.com/parpok" target="_blank">Dżithab</a></div>
 
-    footer{
-        height: 25px;
-        width: 100%;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
+        <div class="chuj"> <a href="mailto:me@parpok.xyz">Mejl</a></div>
+        
+        <div class="chuj"> <a href="https://101010.pl/@parpok" target="_blank">Te całe fediwersum</a></div>
+        
+        <div class="chuj"> <a href="https://stuff.parpok.xyz" target="_blank">Blogasek - może kiedyś</a></div>
+    
+    </div>
+    <div class="bottom">
+        <p id="year"></p>
+    </div>
+    
+    
+    
+</div>
+</center>
+
+<style>
+    body{
+        font-family: 'Open Sans', sans-serif;
     }
-        </style>
-    <!-- JENOTY -->
+
+    #avatar{
+        border-radius: 10%;
+        border: 1px solid #000;
+    }
+
+    .chuj{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+        background-color: #fff;
+        transition: 0.3s;
+    
+    }
+    .chuj:link{
+        text-decoration: none;   
+    }
+    .chuj:link:visited{
+        text-decoration: none;
+    }
+    .chuj:link:hover{
+        text-decoration: none;
+    }
+    .chuj:link{
+        text-decoration: none;
+    }
+
+    </style>
+</div>
+
+<script>
+    var avatar = document.getElementById("avatar");
+    avatar.addEventListener("click", function(){
+        alert("No co jenocik, nie jest on fajny?");
+    });
+
+    window.onload = function() {
+        function TimeNow(){
+            let DateNow = new Date();
+            return DateNow.getFullYear();
+        }
+        document.getElementById("year").innerHTML = TimeNow();
+    }
+</script>
+
 </body>
 </html>
