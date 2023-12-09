@@ -1,7 +1,7 @@
 # My site
 
-Welcome to my little site
+Welcome to this mess
 
-It's a basic contact site. Nothing fancy just standard HTML and CSS. Maybe a basic JS for 1 or 2 things.
+My website wrote with just basic HTML. CSS - just basic things because who needs more?
 
-Color pallete on this site is [Catppuccin](https://github.com/catppuccin/palette) - Light Mode uses Latte style while Dark Mode uses Mocha style.
+Apparently swearing in code makes it better but we're not doing it today because evryone is watching and stuff'll get hard to deal with.

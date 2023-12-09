@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://parpok.xyz/content/avatar.png">
     <meta property="og:url" content="https://parpok.xyz">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="Parpok">
 
     <title>Parpok</title>
@@ -26,12 +26,9 @@
 </head>
 <body>
 
-<div class="kurwa">
-
-<center>
-
+<div class="kontener">
     
-    <div class="skurwiel">
+    <div class="yyyyme">
         
         <img src="./content/avatar.png" alt="avatar" height="200px" width="200px" id="avatar">
 
@@ -39,29 +36,36 @@
         
     </div>
     
-    <div class="chuje">
+    <div class="items">
         
-        <div class="chuj"> <a href="https://github.com/parpok" target="_blank">Dżithab</a></div>
+        <div class="item"> <a href="https://github.com/parpok" target="_blank">Dżithab</a></div>
 
-        <div class="chuj"> <a href="mailto:me@parpok.xyz">Mejl</a></div>
+        <div class="item"> <a href="mailto:me@parpok.xyz">Mejl</a></div>
         
-        <div class="chuj"> <a href="https://101010.pl/@parpok" target="_blank">Te całe fediwersum</a></div>
+        <div class="item"> <a href="https://101010.pl/@parpok" target="_blank">Te całe fediwersum</a></div>
         
-        <div class="chuj"> <a href="https://stuff.parpok.xyz" target="_blank">Blogasek - może kiedyś</a></div>
+        <div class="item"> <a href="https://stuff.parpok.xyz" target="_blank">Blogasek - może kiedyś</a></div>
     
     </div>
     <div class="bottom">
         <p id="year"></p>
     </div>
     
-    
-    
 </div>
-</center>
 
 <style>
     body{
         font-family: 'Open Sans', sans-serif;
+        overflow: hidden;
+    }
+
+    .kontener{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
     #avatar{
@@ -69,7 +73,7 @@
         border: 1px solid #000;
     }
 
-    .chuj{
+    .item{
         margin: 10px;
         padding: 10px;
         border: 1px solid #000;
@@ -80,16 +84,16 @@
         transition: 0.3s;
     
     }
-    .chuj:link{
+    .item:link{
         text-decoration: none;   
     }
-    .chuj:link:visited{
+    .item:link:visited{
         text-decoration: none;
     }
-    .chuj:link:hover{
+    .item:link:hover{
         text-decoration: none;
     }
-    .chuj:link{
+    .item:link{
         text-decoration: none;
     }
 
