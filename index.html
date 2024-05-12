@@ -1,78 +1,97 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="My personal page with links to GitHub and ways to reach me.">
-    <meta name="author" content="Parpok">
-    <meta name="keywords" content="personal page, links">
-
-    <meta property="og:title" content="Parpok">
-    <meta property="og:description" content="My personal page with links to GitHub and ways to reach me.">
-    <meta property="og:image" content="https://parpok.xyz/content/avatar.png">
-    <meta property="og:url" content="https://parpok.xyz">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pl_PL">
-    <meta property="og:site_name" content="Parpok">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="My personal page with links to GitHub and ways to reach me."
+    />
+    <meta name="author" content="Parpok" />
+    <meta name="keywords" content="personal page, links" />
+    <meta property="og:title" content="Parpok" />
+    <meta
+      property="og:description"
+      content="My personal page with links to GitHub and ways to reach me."
+    />
+    <meta property="og:image" content="https://parpok.xyz/content/avatar.png" />
+    <meta property="og:url" content="https://parpok.xyz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Parpok" />
     <title>Parpok</title>
-    
-    <link rel="icon" type="image/x-icon" href="/content/avatar.png">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-
-</head>
-<body>
-
-<div class="kontener">
-    
-    <div class="yyyyme">
-        
-        <img src="./content/avatar.png" alt="avatar" height="200px" width="200px" id="avatar">
-
+    <link rel="icon" type="image/x-icon" href="/content/avatar.png" />
+  </head>
+  <body>
+    <div class="kontener">
+      <div class="yyyyme">
+        <img
+          src="./content/avatar.png"
+          alt="avatar"
+          height="200"
+          width="200"
+          id="avatar"
+        />
         <h1 id="nickname">Parpok</h1>
-        
-    </div>
-    
-    <div class="items">
-        
-        <div class="item"> <a href="https://github.com/parpok" target="_blank">Dżithab</a></div>
-
-        <div class="item"> <a href="mailto:me@parpok.xyz">Mejl</a></div>
-        
-        <div class="item"> <a href="https://101010.pl/@parpok" target="_blank">Te całe fediwersum</a></div>
-        
-        <div class="item"> <a href="https://stuff.parpok.xyz" target="_blank">Blogasek - może kiedyś</a></div>
-    
-    </div>
-    <div class="bottom">
+      </div>
+      <div class="items">
+        <div class="item">
+          <a href="https://github.com/parpok" target="_blank">Dżithab</a>
+        </div>
+        <div class="item"><a href="mailto:me@parpok.xyz">Mejl</a></div>
+        <div class="item">
+          <a href="https://101010.pl/@parpok" target="_blank"
+            >Te całe fediwersum</a
+          >
+        </div>
+        <div class="item">
+          <a href="https://stuff.parpok.xyz" target="_blank"
+            >Blogasek - tak jakby</a
+          >
+        </div>
+      </div>
+      <div class="bottom">
         <p id="year"></p>
+      </div>
     </div>
-    
-</div>
+    <!-- UwU rawr -->
+    <script>
+      var avatar = document.getElementById("avatar");
+      avatar.addEventListener("click", function () {
+        alert("No co jenocik, nie jest on fajny?");
+      });
 
-<style>
-    body{
-        font-family: 'Open Sans', sans-serif;
+      window.onload = function () {
+        function TimeNow() {
+          let DateNow = new Date();
+          return DateNow.getFullYear();
+        }
+        document.getElementById("year").innerHTML = TimeNow();
+      };
+    </script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
         overflow: hidden;
-    }
+      }
 
-    .kontener{
+      .kontener {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
         align-items: center;
         height: 100vh;
-    }
+      }
 
-    #avatar{
+      #avatar {
         border-radius: 10%;
         border: 1px solid #000;
-    }
+      }
 
-    .item{
+      .item {
         margin: 10px;
         padding: 10px;
         border: 1px solid #000;
@@ -81,38 +100,19 @@
         text-align: center;
         background-color: #fff;
         transition: 0.3s;
-    
-    }
-    .item:link{
-        text-decoration: none;   
-    }
-    .item:link:visited{
+      }
+      .item:link {
         text-decoration: none;
-    }
-    .item:link:hover{
+      }
+      .item:link:visited {
         text-decoration: none;
-    }
-    .item:link{
+      }
+      .item:link:hover {
         text-decoration: none;
-    }
-
+      }
+      .item:link {
+        text-decoration: none;
+      }
     </style>
-</div>
-<!-- UwU rawr -->
-<script>
-    var avatar = document.getElementById("avatar");
-    avatar.addEventListener("click", function(){
-        alert("No co jenocik, nie jest on fajny?");
-    });
-
-    window.onload = function() {
-        function TimeNow(){
-            let DateNow = new Date();
-            return DateNow.getFullYear();
-        }
-        document.getElementById("year").innerHTML = TimeNow();
-    }
-</script>
-
-</body>
+  </body>
 </html>
