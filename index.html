@@ -1,118 +1,102 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="My personal page with links to GitHub and ways to reach me."
-    />
-    <meta name="author" content="Parpok" />
-    <meta name="keywords" content="personal page, links" />
-    <meta property="og:title" content="Parpok" />
-    <meta
-      property="og:description"
-      content="My personal page with links to GitHub and ways to reach me."
-    />
-    <meta property="og:image" content="https://parpok.xyz/content/avatar.png" />
-    <meta property="og:url" content="https://parpok.xyz" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:site_name" content="Parpok" />
-    <title>Parpok</title>
-    <link rel="icon" type="image/x-icon" href="/content/avatar.png" />
+    <title></title>
   </head>
   <body>
-    <div class="kontener">
-      <div class="yyyyme">
-        <img
-          src="./content/avatar.png"
-          alt="avatar"
-          height="200"
-          width="200"
-          id="avatar"
-        />
-        <h1 id="nickname">Parpok</h1>
-      </div>
-      <div class="items">
-        <div class="item">
-          <a href="https://github.com/parpok" target="_blank">Dżithab</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./projects.html">Projects</a>
+      <a href="./links.html">Links</a>
+    </nav>
+
+    <div class="container" id="CenterContainer">
+      <div class="me" id="meCard">
+        <div class="sidesPair">
+          <div id="leftSide" class="side">
+            <img
+              src="./content/avatar.png"
+              alt="avatar"
+              width="175"
+              height="175"
+              style="border-radius: 10%; border: 1px solid"
+            />
+          </div>
+          <div id="rightSide" class="side">
+            <h1>Hi. I'm Pat BTW</h1>
+            <!-- <p>Raccoon dog who likes to make iPhone apps</p>  This should appear only in UwU mode or something-->
+            <p>I love making iPhone apps</p>
+          </div>
         </div>
-        <div class="item"><a href="mailto:me@parpok.xyz">Mejl</a></div>
-        <div class="item">
-          <a href="https://101010.pl/@parpok" target="_blank"
-            >Te całe fediwersum</a
-          >
-        </div>
-        <div class="item">
-          <a href="https://stuff.parpok.xyz" target="_blank"
-            >Blogasek - tak jakby</a
-          >
-        </div>
-      </div>
-      <div class="bottom">
-        <p id="year"></p>
       </div>
     </div>
-    <!-- UwU rawr -->
-    <script>
-      var avatar = document.getElementById("avatar");
-      avatar.addEventListener("click", function () {
-        alert("No co jenocik, nie jest on fajny?");
-      });
 
-      window.onload = function () {
-        function TimeNow() {
-          let DateNow = new Date();
-          return DateNow.getFullYear();
-        }
-        document.getElementById("year").innerHTML = TimeNow();
-      };
-    </script>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        overflow: hidden;
-      }
-
-      .kontener {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      #avatar {
-        border-radius: 10%;
-        border: 1px solid #000;
-      }
-
-      .item {
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #000;
-        border-radius: 10px;
-        width: 200px;
-        text-align: center;
-        background-color: #fff;
-        transition: 0.3s;
-      }
-      .item:link {
-        text-decoration: none;
-      }
-      .item:link:visited {
-        text-decoration: none;
-      }
-      .item:link:hover {
-        text-decoration: none;
-      }
-      .item:link {
-        text-decoration: none;
-      }
-    </style>
+    <!-- <p>Treat this like a badge bruh</p> -->
   </body>
 </html>
+<style>
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set the body's minimum height to viewport height */
+    justify-content: center; /* Center content horizontally within the body */
+    align-items: center;
+  }
+  nav {
+    padding-left: 1%;
+    padding-right: 1%;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    border: 1px solid;
+    border-radius: 10px;
+  }
+
+  a:link {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: black;
+    text-decoration: none;
+  }
+
+  .me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 5%;
+    border: 1px solid;
+    border-radius: 25px;
+  }
+
+  .sidesPair {
+    display: flex;
+    flex-direction: row;
+  }
+  @media (max-width: 600px) {
+    .sidesPair {
+      flex-direction: column;
+    }
+  }
+
+  .side {
+    padding: 1%;
+  }
+</style>
