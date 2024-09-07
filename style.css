@@ -7,10 +7,23 @@ body {
   padding: 0;
 }
 
+@media (prefers-color-scheme: light) {
+  body {
+    color: #10213d;
+  }
+
+}
+
+/* thats a happy accident */
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #10213d;
     color: #c6c2a7;
+  }
+
+  .about{
+    color: white;
   }
 }
 
