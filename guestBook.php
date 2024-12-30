@@ -1,7 +1,28 @@
+<?php
+
+
+$db = mysqli_connect("localhost", "web", "","parpokxyz");
+
+if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
+} else {
+    echo "we good";
+}
+
+$messagesQuery = mysqli_query($db,"SELECT * FROM guestBook");
+
+while ($queryResult = mysqli_fetch_assoc($messagesQuery)) {
+
+    // TODO: FANCY HTML BLOCK TO MAKE IT ALL LOOK NICE AND NEAT
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="My personal page" />
+    <meta name="description" content="My personal pages guest book" />
     <meta name="author" content="Parpok" />
     <meta name="keywords" content="personal page, links" />
     <meta property="og:title" content="Parpok" />
@@ -58,19 +79,11 @@
         </div>
       </div>
 
-      <div class="gibmoney">
-        <h3>Gib money pls UwU :3</h3>
-        <img
-          src="./content/gibmoeny.png"
-          alt="gibmoney"
-          style="max-width: 100%"
-        />
-        <h1>BITCONNNEEEEEEEEEEEEECT</h1>
-        <p>No way ya giving me money bruh<br> whatever</p>
-        <a href="https://mempool.space/address/bc1qdnrhzgwkasa98x83r07cez6ya7adcdayf8mp85" target="_blank"><p>bc1qdnrhzgwkasa98x83r07cez6ya7adcdayf8mp85</p></a>
-        <a href="https://etherscan.io/address/0x2387C45d61B19D1A22dAEf2428DcDEd13c10A4D4" target="_blank"><p>0x2387C45d61B19D1A22dAEf2428DcDEd13c10A4D4</p></a>
-      </div>
+      <div class="guestBook">
+        <h3>guest book</h3>
+        </div>
     </div>
   </body>
 </html>
 <style></style>
+
