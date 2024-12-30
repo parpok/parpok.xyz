@@ -42,9 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ss", $userName, $message);
 
     if ($stmt->execute()) {
-        echo "Your note has been added!";
-
-        header("Location: ./guestbook.php?status=success");
+        header("Location: ./guestbook.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
