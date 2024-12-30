@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ss", $userName, $message);
 
     if ($stmt->execute()) {
-        header("Location: ./guestbook.php");
+        header("Location: ./guestBook.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
