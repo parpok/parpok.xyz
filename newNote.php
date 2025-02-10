@@ -1,4 +1,5 @@
 <?php
+header("Content-Security-Policy: script-src 'self' https://challenges.cloudflare.com");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Database connection with error handling

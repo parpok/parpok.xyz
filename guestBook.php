@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="./style.css"/>
 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://challenges.cloudflare.com">
+
     
 </head>
 <body>
