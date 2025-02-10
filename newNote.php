@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $response_data = json_decode($response);
     if ($response_data->success != 1) {
-       die("Hmmm are you really human - or at least an animal");
+       echo("Hmmm are you really human - or at least an animal");
+       header("Location: ./guestBook.php");
     }
 
 
