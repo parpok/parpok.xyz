@@ -1,5 +1,5 @@
 <?php
-header("Content-Security-Policy: script-src 'self' https://challenges.cloudflare.com");
+header("Content-Security-Policy: script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com 'unsafe-inline' blob:");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Database connection with error handling
@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $turnstile_secret     = $_ENV["TurnStyle_Secret"];
+    // Debugging statement
+    error_log("Turnstile Secret: " . $turnstile_secret);
     $turnstile_response   = $_POST['cf-turnstile-response'];
     $url                  = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
     $post_fields          = "secret=$turnstile_secret&response=$turnstile_response";
@@ -25,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($response_data->success != 1) {
        echo("Hmmm are you really human - or at least an animal");
        header("Location: ./guestBook.php");
+       exit();
     }
-
 
     // Collect and sanitize input
     $userName = trim($_POST['userNameGuestBook']);

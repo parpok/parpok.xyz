@@ -21,8 +21,8 @@
     <link rel="preload" href="style.css" as="style"/>
     <link rel="stylesheet" href="./style.css"/>
 
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com 'unsafe-inline' blob:">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://challenges.cloudflare.com">
 
     
 </head>
