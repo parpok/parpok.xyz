@@ -21,7 +21,10 @@
     <link rel="preload" href="style.css" as="style"/>
     <link rel="stylesheet" href="./style.css"/>
 
-    
+    <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+            defer
+    ></script>
 </head>
 <body>
 <div class="container" id="CenterContainer">
@@ -71,6 +74,7 @@
                                                             placeholder="Say something" maxlength="180"></textarea>
             <br>
 
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAA8O6SJ5lgwmXBvd"></div>
 
             <input type="submit" value="submit">
         </form>
