@@ -41,66 +41,59 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Both name and message are required.");
     }
 
-    $cfData = array(
-        "secret" => $CFSecret,
-        "token" => $CFSiteToken,
-        "remoteip" => $remote_addr,
-    );
+
+    $cfData = array("secret" => $CFSecret, "response" => $CFSiteToken, "remoteip" => $remote_addr,);
 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $cfURL);
     curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $cfData);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($cfData)); // Use http_build_query for proper encoding
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-
-    // Use prepared statements to insert data safely
-    $query = "INSERT INTO guestBook (userName, message, postDate) VALUES (?, ?, NOW())";
-    $stmt = $db->prepare($query);
-
-    if (!$stmt) {
-        die("Query preparation failed: " . $db->error);
-    }
 
     $response = curl_exec($curl);
 
     if (curl_errno($curl)) {
         $error_message = curl_error($curl);
-        // Handle the error the way you like it
-        echo 'cURL Error: ' . $error_message.'<br>';
-    }else{
-        /* Parse Cloudflare's response and check if there are any validation errors */
-        $response = json_decode($response,true);
-        if ($response['error-codes'] && count($response['error-codes']) > 0){
-            echo 'Cloudflare Turnstile check failed. Error codes:<br>';
-            echo '<ul>';
-            foreach($response['error-codes'] as $e){
-                echo '<li>'.$e.'</li>';
-            }
-            echo '</ul>';
-            echo '<br><br>Output from Cloudflare:<br><br>';
-            print_r($response);
-        }else{
-            echo 'Passed Cloudflare Turnstile check.<br><br>Output from Cloudflare:<br><br>';
-            print_r($response);
-            // Process the response
+        echo 'cURL Error: ' . $error_message . '<br>';
+    } else {
+        $response = json_decode($response, true);
+        echo '<pre>';
+        print_r($response);
+        echo '</pre>';
 
-            // Bind parameters and execute
+        if (isset($response['success'])) {
+            // Use prepared statements to insert data safely
+            $query = "INSERT INTO guestBook (userName, message, postDate) VALUES (?, ?, NOW())";
+            $stmt = $db->prepare($query);
+
+            if (!$stmt) {
+                die("Query preparation failed: " . $db->error);
+            }
+
             $stmt->bind_param("ss", $userName, $message);
 
             if ($stmt->execute()) {
                 header("Location: ./guestBook.php");
+                $stmt->close();
                 exit();
             } else {
                 echo "Error: " . $stmt->error;
+                $stmt->close();
                 exit();
             }
+
+        } else {
+            echo 'Cloudflare Turnstile check failed. Error codes:<br>';
+            echo '<ul>';
+            foreach ($response['error-codes'] as $e) {
+                echo '<li>' . $e . '</li>';
+            }
+            echo '</ul>';
         }
     }
 
     // Close connections
     curl_close($curl);
-    $stmt->close();
     $db->close();
 }
 ?>
