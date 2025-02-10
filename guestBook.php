@@ -20,6 +20,9 @@
 
     <link rel="preload" href="style.css" as="style"/>
     <link rel="stylesheet" href="./style.css"/>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    
 </head>
 <body>
 <div class="container" id="CenterContainer">
@@ -32,7 +35,7 @@
                 <a href="https://twitter.com/parpok206" target="_blank">
                     <img src="./content/svgs-feather/twitter.svg" alt="Twitter"/>
                 </a>
-                <a href="https://github.com" target="_blank">
+                <a href="https://github.com/parpok" target="_blank">
                     <img src="./content/svgs-feather/github.svg" alt="GitHub"/>
                 </a>
             </div>
@@ -68,12 +71,34 @@
             <label for="guestBookMessage"></label><textarea name="guestBookMessage" id="guestBookMessage" required
                                                             placeholder="Say something" maxlength="180"></textarea>
             <br>
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAA8O6SJ5lgwmXBvd"></div>
+
             <input type="submit" value="submit">
         </form>
 
 
         <?php
         $db = new mysqli("localhost", "web", "", "parpokxyz");
+
+        $turnstile_secret     = $_ENV["TurnStyle_Secret"];
+        $turnstile_response   = $_POST['cf-turnstile-response'];
+        $url                  = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+        $post_fields          = "secret=$turnstile_secret&response=$turnstile_response";
+        
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        $response_data = json_decode($response);
+        if ($response_data->success != 1) {
+            header("Location: /");
+            exit;
+        }
+
 
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
