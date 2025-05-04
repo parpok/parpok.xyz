@@ -1,0 +1,42 @@
+---
+import "../styles/style.css";
+import Header from "../components/header.astro";
+import Bottom from "../components/bottom.astro";
+
+const fontmatter = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta name="description" content="My personal page" />
+    <meta name="author" content="Parpok" />
+    <meta name="keywords" content="personal page, links" />
+    <meta property="og:title" content="Parpok" />
+    <meta property="og:description" content="My personal page" />
+    <meta property="og:image" content="https://parpok.xyz/content/avatar.png" />
+    <meta property="og:url" content="https://parpok.xyz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Parpok" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pat</title>
+
+    <link rel="icon" type="image/png" href="/content/avatar.png" />
+
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <Header />
+    <div class="container">
+      <h1>
+        {fontmatter.title}
+      </h1>
+
+      <article><slot /></article>
+      <Bottom />
+    </div>
+  </body>
+</html>
