@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/siteLayout.astro
 title: Fuck frontend Mafia
-pubDate: 17.12.2024
+pubDate: 2024-12-17
 ---
 
 <figure>

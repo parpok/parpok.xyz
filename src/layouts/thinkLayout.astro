@@ -27,6 +27,14 @@ const fontmatter = Astro.props;
 
     <link rel="preload" href="style.css" as="style" />
     <link rel="stylesheet" href="./style.css" />
+
+    
+    <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Pat thinks"
+    href={new URL("rss.xml", Astro.site)}
+/>
   </head>
   <body>
     <Header />
