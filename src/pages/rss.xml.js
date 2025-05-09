@@ -1,4 +1,4 @@
-import rss, { pagesGlobToRssItems } from "@astrojs/rss";
+import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
 export async function GET(context) {
@@ -12,7 +12,8 @@ export async function GET(context) {
     items: takes.map((take) => ({
       title: take.data.title,
       pubDate: take.data.pubDate,
-      link: `/thinks/${take.id}`
+      link: `/thinks/${take.id}`,
+      content: take.body
     })),
   });
 }
