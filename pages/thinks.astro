@@ -1,0 +1,23 @@
+---
+import SiteLayout from "../layouts/siteLayout.astro";
+
+const thinks: [string, { frontmatter?: { title?: string } }][] = Object.entries(
+  import.meta.glob("./thinks/*.md", { eager: true })
+);
+---
+
+<SiteLayout>
+  <ul>
+    {
+      thinks.map(([path, post]) => (
+        <li>
+          {path && (
+            <a href={`/thinks/${path.split("/").pop()?.replace(".md", "")}`}>
+              {post.frontmatter?.title ?? path}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</SiteLayout>
