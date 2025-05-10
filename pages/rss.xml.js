@@ -19,11 +19,20 @@ export async function GET(context) {
       thoughts.map((post) => ({
         title: post.data.title,
         description: post.data.description,
-        link: `/thinks/${post.url}/`,
+        link: `/thinks/${post.url.toLowerCase()}/`,
         pubDate: post.data.date,
       })),
     ],
-    customData: `<language>en-gb</language>`,
+    customData: `<language>en-gb</language>
+   <image>
+      <url>https://parpok.xyz/avatar.png</url>
+      <title>Pat thinks</title>
+      <link>https://parpok.xyz/</link>
+      <width>32</width>
+      <height>32</height>
+      <description>Your site icon</description>
+    </image>
+    `,
     // fuck the USA
   });
 }
