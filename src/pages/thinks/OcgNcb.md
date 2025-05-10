@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/siteLayout.astro
 title: Old car good. New car bad.
-pubdate: 2024-09-07
+pubDate: 2024-09-07
 ---
 
 Old car good - has buttons, good tactile buttons. No big color screens - just small red/monochrome

@@ -5,32 +5,27 @@ export async function GET(context) {
   const thoughts = await getCollection("thinks");
 
   return rss({
-    // `<title>` field in output xml
     title: "Pat thinks",
-    // `<description>` field in output xml
     description:
-      "A collection of Pats thoughts that can vary but might be seen as unhinged.",
-    // Pull in your project "site" from the endpoint context
-    // https://docs.astro.build/en/reference/api-reference/#site
+      "A collection of Pat's thoughts that can vary but might be seen as unhinged.",
     site: context.site,
-    // Array of `<item>`s in output xml
-    // See "Generating items" section for examples using content collections and glob imports
     items: thoughts.map((post) => ({
       title: post.data.title,
-      description: post.data.description,
-      link: `/thinks/${post.url}/`.toLocaleLowerCase(),
-      pubDate: post.data.date,
+      link: `/thinks/${post.slug}`,
+      pubDate: post.data.pubDate,
+      content: post.body,
     })),
-    customData: `<language>en-gb</language>
-   <image>
-      <url>https://parpok.xyz/avatar.png</url>
-      <title>Pat thinks</title>
-      <link>https://parpok.xyz/</link>
-      <width>32</width>
-      <height>32</height>
-      <description>Your site icon</description>
-    </image>
+    xmlns: {
+      media: "http://search.yahoo.com/mrss/",
+    },
+    customData: `
+      <language>en-gb</language>
+      <image>
+        <url>https://parpok.xyz/content/avatar.png</url>
+        <title>Pat thinks</title>
+        <link>https://parpok.xyz/</link>
+      </image>
+      <media:thumbnail url="https://parpok.xyz/content/avatar.png" width="144" height="144" />
     `,
-    // fuck the USA
   });
 }
